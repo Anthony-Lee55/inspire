@@ -1,6 +1,7 @@
 import { AppState } from "../AppState.js";
 import { baseURL } from "../env.js"
 import { Image } from "../models/Images.js";
+import { api } from "./AxiosService.js";
 
 
 const imageApi = axios.create({
@@ -10,7 +11,7 @@ const imageApi = axios.create({
 class ImagesService {
 
   async getImage() {
-    const response = await imageApi.get('api/images')
+    const response = await api.get('api/images')
     // console.log('🖼️📡', response.data);
     const image = new Image(response.data)
     AppState.image = image

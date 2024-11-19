@@ -77,11 +77,12 @@
         <h3>My ToDos:</h3>
       </div>
       <div class="offcanvas-body">
-        <form id="create-todo-form" onsubmit="app.TodosController.createTodo()">
-          <input id="save-todo-text" type="text" class="rounded-1 btn btn-outline-black bg-glass"
+        <form onsubmit="app.TodosController.createTodo()">
+          <!-- FIXME get form data, cannot pull the values out of this input reference Gregslist, How does the form know what is a make? and what is a model? -->
+          <input id="create-todo-text" type="text" class="rounded-1 btn btn-outline-black bg-glass"
             placeholder="Add a ToDo" required>
           <!-- <label for="save-todo" role="text">Add a ToDo</label> -->
-          <button type="submit" id="save-todo" class="btn btn-outline-white rounded-1" required><i
+          <button type="submit" id="create-todo" class="btn btn-outline-white rounded-1" title="Add a Todo" required><i
               class="text-light mdi mdi-plus-thick"></i></button>
         </form>
         <hr>
@@ -142,7 +143,9 @@
           <span class="rounded-1 border border-2 p-2">weather will go here</span>
         </div>
         <h3>
-          time will go here
+          <span id="hours">00</span>
+          <span>:</span>
+          <span id="minutes">00</span>
         </h3>
         <div>
           creator stuff will go here

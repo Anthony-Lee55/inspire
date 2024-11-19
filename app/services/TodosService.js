@@ -4,36 +4,32 @@ import { Todo } from "../models/Todos.js"
 
 class TodosService {
 
-  async getTodos() {
-    const response = await todoApi.get('api/todos')
-    console.log('');
-
+  async createTodo(todoData) {
+    const response = await api.post('api/todos', todoData)
+    console.log('🧪📃', response.data);
+    // const car = new Car(response.data)
+    // AppState.cars.push(car)
   }
 
-  // async createTodo() {
-  //   const todoToSave = AppState.todo
+  // // async getTodo(){
+  // //   const response = await api.
+  // // }
+
+  // async createTodo(todoData) {
   //   const response = await api.post('api/todos')
-  //   console.log('💾📃📡', response.data);
+  //   const todo = new Todo(todoData)
+  //   console.log('new', todo);
 
   // }
 
-  // async createTodo(formData) {
-  //   const todo = new Todo(formData)
-  //   console.log('new', todo);
-  //   AppState.todos.push(todo)
-  // const response = await api.post('api/todos', formData)
-  // console.log('🧪📃📡', response.data);
-  // const createdTodo = new Todo(response.data)
-  // AppState.todos.push(createdTodo)
+  // TODO, create todo. Needs to take in the form data, and pass it to the api
+  // log that response
+  // convert that response into your Backed Class
+  // push that into appstate
+
+
+
+
 }
-
-// async getMyTodos() {
-//   const response = await api.get('api/todos')
-//   console.log('🫳📃📡', response.data);
-
-// }
-
-
-
 
 export const todosService = new TodosService()
